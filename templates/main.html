@@ -1,0 +1,70 @@
+<div class="row">
+	<h1>Hello this is Home Page</h1><h1>Hello this is Home Page</h1>
+	<h1>Hello this is Home Page</h1><h1>Hello this is Home Page</h1>
+	<h1>Hello this is Home Page</h1><h1>Hello this is Home Page</h1>
+</div>
+
+<div class="row">
+	<div class="col-md-4">
+		<input type="text" ng-model="first_name" />
+	</div>
+	<div class="col-md-4">
+		<input type="text" ng-model="second_name" />
+	</div>
+	<div class="col-md-4">
+		{{ first_name + " " + second_name }}
+	</div>
+</div>
+
+<div class="row">
+	<ul>
+	    <li ng-repeat="x in names">{{ x }}</li>
+	</ul>
+</div>
+
+<div>
+	<p>Name: {{ user_detail.name }}</p>
+	<p>Address: {{ user_detail.address }}</p>
+	<p>Age: {{ user_detail.age }}</p>
+</div>
+
+<br><br>
+
+<input type="text" placeholder="Search name.." ng-model="search">
+
+<h1 class="text-warning" ng-show="(list_user_details | filter:search).length == 0">Empty !</h1>
+
+<div ng-repeat="x in list_user_details | filter: search | orderBy: 'name'">
+	
+
+	<h4>Name: {{ x.name | uppercase }}</h4>
+	<h4>Address: {{ x.address }}</h4>
+	<h4>Age: {{ x.age }}</h4>
+</div>
+
+
+{{ tambah_perkataan }}
+
+<!-- <div>
+	<h4>{{ list_user_details[0].name }}</h4>
+	<h4>{{ list_user_details[0].address }}</h4>
+	<h4>{{ list_user_details[0].age }}</h4>
+</div>
+
+<div>
+	<h4>{{ list_user_details[1].name }}</h4>
+	<h4>{{ list_user_details[1].address }}</h4>
+	<h4>{{ list_user_details[1].age }}</h4>
+</div>
+
+<div>
+	<h4>{{ list_user_details[2].name }}</h4>
+	<h4>{{ list_user_details[2].address }}</h4>
+	<h4>{{ list_user_details[2].age }}</h4>
+</div>
+
+<div>
+	<h4>{{ list_user_details[3].name }}</h4>
+	<h4>{{ list_user_details[3].address }}</h4>
+	<h4>{{ list_user_details[3].age }}</h4>
+</div> -->
